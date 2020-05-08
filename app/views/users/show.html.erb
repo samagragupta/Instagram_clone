@@ -1,0 +1,57 @@
+<div class="user-profile">
+  <div class="profile row">
+    <div class="col-md-4 avatar">
+      <div class="wrapper">
+        <% if @user.avatar.attached? %>
+          <%= image_tag @user.avatar %>
+        <%end %>
+      </div>
+    </div>
+    <div class="col-md-8 basic-info">
+      <div class="user-wrapper">
+        <h2 class="username"><%= @user.username %></h2>
+        <% if @user == current_user %>
+          <a class="edit-profile" href="<%= edit_user_path(@user) %>">
+            <button>Edit Profile</button>
+          </a>
+        <% end %>
+      </div>
+      <ul class="posts">
+        <li><span><%= @posts.count %></span> posts</li>
+        <li><span>195</span> followers</li>
+        <li><span>345</span> following</li>
+      </ul>
+      <h2 class="name"><%=@user.name %></h2>
+      <%=link_to @user.website, @user.website, class: 'website' %>
+    </div>
+  </div>
+
+  <div class="user-tabs">
+    <a class="tab active" href="">
+      <i class="fa fa-th"></i>
+      POSTS
+    </a>
+    <a class="tab" href="">
+      <i class="fa fa-tv"></i>
+      IGTV
+    </a>
+    <a class="tab" href="">
+      <i class="fa fa-bookmark"></i>
+      SAVED
+    </a>
+    <a class="tab" href="">
+      <i class="fa fa-tag"></i>
+      TAGGED
+    </a>
+  </div>
+
+  <div class="user-images">
+    <% @posts.each do |post|%>
+      <div class="wrapper">
+        <%=link_to post_path(post) do %>
+          <%=image_tag post.image %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
