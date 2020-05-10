@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# Screenshots
+
+![](/screenshots/1.JPG)
+![](/screenshots/2.JPG)
+![](/screenshots/3.JPG)
+![](/screenshots/4.JPG)

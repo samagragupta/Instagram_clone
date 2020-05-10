@@ -1,2 +1,1 @@
-$('#posts').append('<%= escape_javascript render(@posts) %>');
-$('.pagination').replaceWith('<%= escape_javascript will_paginate(@posts) %>');
+<%= infinite_append "#infinte-posts ul", { partial: "home/post", collection: @posts }  %>

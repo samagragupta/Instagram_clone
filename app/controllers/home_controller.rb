@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     if current_user
-      @posts = Post.order(created_at: :desc).paginate(:page => params[:page], :per_page => 20)
+      @posts = Post.order(created_at: :desc).paginate(:page => params[:page], :per_page => 5)
       respond_to do |format|
         format.html
         format.js
